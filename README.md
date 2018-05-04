@@ -16,7 +16,7 @@ De plus, c'est un mini-projet personnel qui me permet de renforcer mes connaissa
 - _README.md_ : le fichier que vous êtes actuellement en train de lire, cela va de soi...
 - _LICENSE_ : un fichier de la _Free Software Foundation_ expliquant la licence GNU GPL v3
 
-Afin de démarrer correctement SESAMATOR, il vous est recommandé de rendre exécutable, si ce n'est déjà fait, le fichier _sesamator.sh_ avec la commande `chmod +x sesamator.sh`, puis de démarrer CRÊPE avec la commande `./sesamator.sh`.
+Afin de démarrer correctement SESAMATOR, il vous est recommandé de rendre exécutable, si ce n'est déjà fait, le fichier _sesamator.sh_ avec la commande `chmod +x sesamator.sh`, puis de démarrer SESAMATOR avec la commande `./sesamator.sh`.
 
 -----------------------------------------------------------------------------------------------
 ### Contacts :
