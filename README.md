@@ -1,5 +1,5 @@
 # SESAMATOR - Un simple générateur de mots de passe
-##### Auteur : Brice Jeunieaux____________________Version actuelle : 0.0.0.0/d____________________Licence : GNU GPL v3
+##### Auteur : Brice Jeunieaux____________________Version actuelle : 0.1.0.0/d____________________Licence : GNU GPL v3
 ##### Date de début du projet : 4 Mai 2018
 
 -----------------------------------------------------------------------------------------------
