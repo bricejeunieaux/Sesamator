@@ -1,0 +1,38 @@
+Versions de SESAMATOR
+
+Nomenclature et fonctionnement :
+  Nomenclature 		:	v W.X.Y.Z/r
+  Fonctionnement 	:
+  'v' pour "version" ;
+  'W' est le numéro de la version dite "officielle", recommandée d'utilisation.
+  'X' est le numéro d'une fonctionnalité précise du système.
+  'Y' est une partie de code au sein d'une fonctionnalité (une fonctionnalité peut contenir plusieurs fonctions Bash).
+  'Z' est le numéro de correctif, appliqué à une fonctionnalité.
+  '/r' est une lettre décrivant une certaine situation, comme une sorte de message à l'utilisateur.
+
+  'W' : Les différentes versions dites "officielles" sont celles dont la distribution est recommandée.
+  Elles sont totalement stables, et ne possèdent pas de noms de code (ce n'est qu'un mini-projet !).
+
+  'X' : Une certaine fonctionnalité aura son propre digit dans le numéro de version.
+  Ne pas confondre une fonctionnalité et une fonction du code ! La fonctionnalité peut être le système d'affichage,
+  le système de menu, de génération de mots de passe, etc...
+
+  'Y' : Une certaine partie du code (cette fois ci, une fonction dans le code, généralement).
+  Ce chiffre n'est en rien révélateur de son importance, ou de sa place dans le code.
+
+  'Z' : Tout simplement un correctif appliqué à la fonction 'Y'.
+
+  '/r' : Un message envers l'utilisateur, comme par exemple :	'/i'  : instable
+  								'/s'  : stable
+								'/d'  : en développement
+								'/s+' : Support à long terme (durée pas encore définie)
+								'/t'  : test ouvert
+
+-----------------------------------------------------------------------------------------------
+
+Liste des versions (publiées ou non, ainsi que leur signification) :
+
+v0.0.0.0 :	Lancement du projet à l'écrit, préparation des fichiers basiques
+
+-----------------------------------------------------------------------------------------------
+
