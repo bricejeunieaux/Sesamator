@@ -6,4 +6,5 @@
 ### Petit mot pour l'utilisateur :
 Merci d'utiliser SESAMATOR, un simple générateur de mots de passe en Bash.
 Bien qu'il existe une multitude de programmes similaires disponible sur Internet, j'ai voulu créer le mien.
-Ce projet est né de la volonté de créer un générateur de mots de passe avec une interface très simple, et qui fait son travail très efficacement. De plus, c'est un mini-projet personnel qui me permet de renforcer et d'obtenir de nouvelles connaissances.
+Ce projet est né de la volonté de créer un générateur de mots de passe avec une interface très simple, et qui fait son travail très efficacement, et rapidement.
+De plus, c'est un mini-projet personnel qui me permet de renforcer et d'obtenir de nouvelles connaissances.
