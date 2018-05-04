@@ -67,5 +67,44 @@ definitionCouleur ;
 
 
 
+##############################  PARTIE 2 : MENU PRINCIPAL DU SYSTÈME	########################################
+#####Cette partie contient uniquement le menu où l'utilisateur pourra être redirigé selon ses choix de génération de MDP
 
+menuPrincipal() {
+	
+	clear
+	tput cup 1 0 ; echo -e "${enSouligne}${fgVert}Générateur de mots de passe / Version 0.1.0.0${enDefaut}"
+	tput cup 3 0 ; echo -e "[1] Générer un mot de passe complètement aléatoire"
+	tput cup 4 0 ; echo -e "[2] Générer un mot de passe personnalisé"
+	tput cup 5 0 ; echo -e "[3] Générer un mot de passe d'après un modèle"
+	
+	tput cup 7 0 ; echo -e "[4] Comment utiliser ce script ?"
+	tput cup 8 0 ; echo -e "[5] Quitter ce script"
+	tput cup 10 0 ;
+	
+}
+
+menuPrincipal ;
+
+function getTouche() {
+	
+	escape_char=$(printf "\u1b")
+	read -rsn1 mode # get 1 character
+	
+	if	[[ $mode == $escape_char ]]
+	then	read -rsn2 mode # read 2 more chars
+	fi
+	
+	case $mode in
+		1) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
+		2) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
+		3) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
+		4) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
+		5) clear ; exit ;;
+		*) >&2 echo 'Veuillez entrez un nombre entre 1 et 5.'; sleep 1 ; clear ; menuPrincipal ; getTouche ;;
+	esac
+	
+}
+
+getTouche ;
 
