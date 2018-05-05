@@ -25,7 +25,7 @@
 
 initFenetre() {						#Dimensionnage fenêtre + effaçage
 
-resize -s 35 120
+resize -s 35 125
 clear
 
 }
@@ -67,16 +67,92 @@ definitionCouleur ;
 
 
 
-##############################  PARTIE 2 : MENU PRINCIPAL DU SYSTÈME	########################################
+##############################  PARTIE 2 : PARAMÉTRAGES GÉNÉRAUX	########################################
+#####Ces paramétrages concernent l'ensemble du programme, peu importe les méthodes de génération choisies.
+#####Ces paramétrages, contenus dans des fonctions, sont appelés une unique fois pour faire fonctionner le programme jusqu'à son arrêt.
+
+tableauxCaracteres() {
+	
+	lettersMin=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+	lettersMaj=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+	numbers=(0 1 2 3 4 5 6 7 8 9)
+	specials=("!" "@" "#" "$" "%" "^" "&" "*" "(" ")" "_" "+" "\`" "~" "-" "=" "[" "]" "{" "}" ";" "'" ":" "\"" "," "." "/" "<" ">" "?" "\\" "|")
+	
+}
+
+tableauxCaracteres ;
+
+
+
+
+
+
+##############################  PARTIE 5 : MANUEL UTILISATEUR	########################################
+#####Cette méthode génère de manière totalement aléatoire un mot de passe
+
+manuelUtilisateur() {
+	
+	clear
+	tput cup 1 0 ; echo -e "${enSouligne}${fgVert}Générateur de mots de passe / Version 0.1.0.0 / Comment utiliser le script ?${enDefaut}"
+	tput cup 3 0 ; echo -e "Pour générer un mot de passe depuis le menu principal du script, vous pouvez avoir recours à différentes méthodes."
+	
+	echo
+	echo -e "${fgJaune}${enSouligne}Méthode 1 : Totalement aléatoire :${enDefaut}"
+	echo
+	
+	echo -e "Cette méthode va, indépendamment de la longueur du mot de passe voulu, placer des caractères choisis"
+	echo -e "aléatoirement dans un tableau contenant un certain type de caractères, lui-même choisi aléatoirement."
+	echo -e "Ainsi, avec cette méthode, vous pourrez vous retrouvez avec des mots de passes tels que :"
+	echo -e "${fgRouge}'4x)&q9Ud{0'${enDefaut}, ${fgRouge}'4h1'${enDefaut}, ${fgRouge}'doXjrJe,P;'${enDefaut},  ${fgRouge}'wAyA[v'${enDefaut}, ou encore ${fgRouge}'7igqT3fF2)790eh&5P3oY;84'${enDefaut}."
+	
+	echo
+	echo -e "${fgJaune}${enSouligne}Méthode 2 : Totalement personnalisé :${enDefaut}"
+	echo
+	
+	echo -e "Avec cette méthode, vous pouvez choisir quel type de caractère (nombre, lettre, caractère spécial)"
+	echo -e "se situera à quelle position dans votre mot de passe. Cette méthode est recommandée pour les mots de passe"
+	echo -e "de longueur courte à moyenne. Du premier au dernier caractère, vous définirez son type."
+	echo -e "Cela signifie qu'avec cette méthode, vous mettrez plus ou moins de temps à génerer le mot de passe selon sa longueur."
+	echo -e "La dernière méthode est vivement recommandée pour les mots de passe longs et complets."
+	
+	echo
+	echo -e "${fgJaune}${enSouligne}Méthode 3 : Personnalisé d'après un modèle :${enDefaut}"
+	echo
+	
+	echo -e "Avec cette méthode, vous pourrez choisir entre différents modèles de mots de passe."
+	echo -e "Par exemple, vous aurez le modèle 1 qui dira que sur 5 caractères dans un mot de passe, les 3 premiers sont des lettres,"
+	echo -e "et les 2 restants sont des chiffres. Dans un modèle de mot de passe, il y aura donc un ou plusieurs motifs présents."
+	echo -e "Ainsi, avec cette méthode, vous pourrez vous retrouvez avec des mots de passes tels que :"
+	echo -e "'${fgCyan}ag${fgViolet}47${fgCyan}hn${fgViolet}33${fgCyan}xx${fgViolet}79${enDefaut}', '${fgCyan}14${fgViolet}ff${fgCyan}76${fgViolet}ha${enDefaut}', ou encore des mots de passe contenant trois motifs tels que '${fgCyan}1${fgViolet}f${fgVert}!${fgCyan}8${fgViolet}r${fgVert}\$${enDefaut}'."
+	
+	echo
+	echo -e "Le but d'un motif qui se répète dans un mot de passe est d'être retenu mentalement plus rapidement et plus aisément."
+	echo -e "Avec des mots de passe contenant des motifs, vous pourrez donc générer de longs mots de passes facile à mémoriser."
+	echo -e "Bien entendu, il n'est pas forcément pertinent d'utiliser des mots de passe de 10000 caractères, bien que cela soit"
+	echo -e "tout à fait réalisable par le programme."
+	
+	tput cup 33 0 ; echo -e "${enSouligne}${fgVert}Appuyez sur n'importe quelle touche pour retourner au menu principal"
+	tput cup 33 70 ; read -rsn1 var
+	
+	menuPrincipal ; getTouche ;
+	
+}
+
+
+
+
+
+
+##############################  PARTIE 3 : MENU PRINCIPAL DU SYSTÈME	########################################
 #####Cette partie contient uniquement le menu où l'utilisateur pourra être redirigé selon ses choix de génération de MDP
 
 menuPrincipal() {
 	
 	clear
 	tput cup 1 0 ; echo -e "${enSouligne}${fgVert}Générateur de mots de passe / Version 0.1.0.0${enDefaut}"
-	tput cup 3 0 ; echo -e "[1] Générer un mot de passe complètement aléatoire"
-	tput cup 4 0 ; echo -e "[2] Générer un mot de passe personnalisé"
-	tput cup 5 0 ; echo -e "[3] Générer un mot de passe d'après un modèle"
+	tput cup 3 0 ; echo -e "[1] Générer un/plusieurs mot(s) de passe complètement aléatoire(s)"
+	tput cup 4 0 ; echo -e "[2] Générer un/plusieurs mot(s) de passe personnalisé(s)"
+	tput cup 5 0 ; echo -e "[3] Générer un/plusieurs mot(s) de passe d'après un modèle"
 	
 	tput cup 7 0 ; echo -e "[4] Comment utiliser ce script ?"
 	tput cup 8 0 ; echo -e "[5] Quitter ce script"
@@ -99,7 +175,7 @@ function getTouche() {
 		1) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
 		2) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
 		3) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
-		4) echo "Fonction pas encore implémentée." ; sleep 3 ; menuPrincipal ; getTouche ;;
+		4) manuelUtilisateur ; getTouche2 ;;
 		5) clear ; exit ;;
 		*) >&2 echo 'Veuillez entrez un nombre entre 1 et 5.'; sleep 1 ; clear ; menuPrincipal ; getTouche ;;
 	esac
@@ -107,4 +183,23 @@ function getTouche() {
 }
 
 getTouche ;
+
+
+
+
+
+
+##############################  PARTIE 6 : MÉTHODE DE GÉNÉRATION ALÉATOIRE	########################################
+
+
+
+
+
+
+
+
+
+
+
+
 
